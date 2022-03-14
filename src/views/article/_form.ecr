@@ -1,0 +1,30 @@
+<%- if article.errors %>
+  <ul class="errors">
+  <%- article.errors.each do |error| %>
+    <li><%= error.to_s %></li>
+  <%- end %>
+  </ul>
+<%- end %>
+
+<!-- If an article exists, store the concatinated string of
+  the article url with the article id to a structured action variable
+  to the form for the article's design and creation. If not, then
+  route to the default index view for the creation of the first article. 
+-->
+
+<%- action = (article.id ? "/articles/" + article.id.to_s : "/articles") %>
+<form action="<%= action %>" method="post">
+  <%= csrf_tag %>
+  <%- if article.id %>
+  <input type="hidden" name="_method" value="patch" />
+  <%- end %>
+
+  <div class="form-group">
+    <%= text_field(name: "title", value: article.title, placeholder: "Title", class: "form-control") -%>
+  </div>
+  <div class="form-group">
+    <%= text_area(name: "body", content: article.body, placeholder: "Body", class: "form-control", size: "30x10") -%>
+  </div>
+  <%= submit("Submit", class: "btn btn-success btn-sm") -%>
+  <%= link_to("Back", "/articles", class: "btn btn-light btn-sm") -%>
+</form>
