@@ -5,3 +5,61 @@ $primary: #f4994b;
 .main {
   padding-top: 20px;
 }
+
+.navbar {
+  background-color: black !important;
+}
+
+.nav-link {
+  color: white !important;
+  font-size: 18px;
+}
+
+#home-container {
+  margin-top: 25px;
+}
+
+#logo {
+  float: left;
+  font-size: 1.7em ;
+  text-transform: uppercase;
+  color: white;
+  font-weight: bold;
+  letter-spacing: -1px;
+}
+
+#logo:hover {
+  color: white;
+  text-decoration: none;
+}
+
+.center {
+  text-align: center;
+}
+
+.jumbotron {
+  padding: 2rem 1rem;
+  margin-bottom: 2rem;
+  border-radius: .3rem;
+  background-image: url("../images/blogging-front.jpg");
+  background-color: #e9ecef;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  height: 425px;
+  color: white;
+}
+
+.footer {
+  left: 0;
+  bottom: 0;
+  position: fixed;
+  width: 100%;
+  color: white;
+  text-align: center;
+  flex-shrink: none;
+}
+
+#page-content {
+  flex: 1 0 auto;
+}
