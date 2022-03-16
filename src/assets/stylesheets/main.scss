@@ -40,21 +40,22 @@ $primary: #f4994b;
 .jumbotron {
   padding: 2rem 1rem;
   margin-bottom: 2rem;
-  border-radius: .3rem;
-  background-image: url("../images/blogging-front.jpg");
   background-color: #e9ecef;
+  border-radius: .3rem;
+  background-image: url('../images/blogging-front.jpg');
+  background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
   height: 500px;
-  color: white;
+  color: white
 }
 
 .footer {
+  position: fixed;
   left: 0;
   bottom: 0;
-  position: fixed;
   width: 100%;
+  background-color: black;
   color: white;
   text-align: center;
   flex-shrink: none;

@@ -1,34 +1,28 @@
-<div class="row">
-  <div class="col-sm-11">
-    <h2>Articles</h2>
-  </div>
-  <div class="col-sm-1">
-    <a class="btn btn-success btn-sm" href="/articles/new">New</a>
-  </div>
-</div>
+<h1 id="page-content" class="text-center mt-4">Listing All Articles</h1>
 
-<div class="table-responsive">
-  <table class="table table-striped">
-    <thead>
-      <tr>
-        <th>Title</th>
-        <th>Body</th>
-        <th>Actions</th>
-      </tr>
-    <tbody>
-    <%- articles.each do |article| %>
-      <tr>
-        <td><%= article.title %></td>
-        <td><%= article.body %></td>
-        <td>
-          <span>
-            <%= link_to("Show", "/articles/#{article.id}", class: "btn btn-info btn-sm") -%>
-            <%= link_to("Edit", "/articles/#{article.id}/edit", class: "btn btn-success btn-sm") -%>
-            <%= link_to("Delete", "/articles/#{article.id}?_csrf=#{csrf_token}", "data-method": "delete", "data-confirm": "Are you sure?", class: "btn btn-danger btn-sm") -%>
-          </span>
-        </td>
-      </tr>
-    <%- end %>
-    </tbody>
-  </table>
+<div class="container">
+  <%- articles.each do |article| %>
+    <div class="row justify-content-center">
+        <div class="col-8 mt-4">
+          <div class="card text-center shadow mb-5 bg-white rounded">
+            <div class="card-header">
+              By James Harold II
+            </div>
+            <div class="card-body">
+              <h5 class="card-title"><%= link_to("#{article.title}", "/articles/#{article.id}", class: "text-success") %></h5>
+              <p class="card-text"><%= article.body %></p>
+              <button class="btn btn-outline-success">View</button>
+              <button class="btn btn-outline-info">Edit</button>
+              <button class="btn btn-outline-danger">Delete</button>
+            </div>
+            <div class="card-footer">
+              <small>
+                Created at <%= article.created_at.to_s %>
+                Edited at <%= article.updated_at.to_s %>
+              </small>
+            </div>
+          </div>
+        </div>
+    </div>
+  <% end %>
 </div>
